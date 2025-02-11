@@ -1,11 +1,12 @@
 Use adversarial policy/heuristic to improve policy
 - every N episodes, do a rollout of the policy B and heuristic A
 - compare rewards to go at the end of episodes
-- if R_A > R_B improve the rewards of every reward of the episodes in the buffer else diminish
+- if R_B > R_A improve the rewards of every reward of the episodes in the buffer else diminish
 
 
-- When cumulative_reward_b > cumulative_reward_a: The rewards for Policy B's transitions are scaled down, reflecting better performance relative to Policy A.
-- When cumulative_reward_b < cumulative_reward_a: The rewards for Policy B's transitions are scaled up, reflecting poorer performance relative to Policy A.
+We modify the rewards based on the following:
+- When cumulative_reward_b > cumulative_reward_a: The rewards for Policy B's transitions are scaled up, reflecting better performance relative to heuristic A.
+- When cumulative_reward_b < cumulative_reward_a: The rewards for Policy B's transitions are scaled down, reflecting poorer performance relative to heuristic A.
 - When cumulative_reward_b = cumulative_reward_a: The rewards for Policy B's transitions remain unchanged, reflecting equal performance.
 - When cumulative_reward_a = 0: The rewards for Policy B's transitions remain unchanged to avoid division by zero.
 
