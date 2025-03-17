@@ -7,6 +7,7 @@ Built upon stable_baselines3.
 
 - [Overview](#overview)
 - [Features](#features)
+- [Detailed Infos](#detailed-infos)
 
 ## Overview
 
